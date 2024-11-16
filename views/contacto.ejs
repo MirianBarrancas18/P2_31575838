@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/x-icon" href="images/hair-blanco.png">
+		<link rel="stylesheet" href="../stylesheets/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+		<title>Contacto</title>
+	</head>
+	<body>
+		<header>
+			<div class="caja">
+				<h1><img src="Images/hair.png" width="18%" alt="Logo de la peluqueria"></h1>
+				<nav>
+					<ul>
+						<li><a style="margin: 15px; font-family: 'Poppins';" href="/">Home</a></li>
+						<li><a style="margin: 15px; font-family: 'Poppins';" href="/productos">Productos</a></li>
+						<li><a style="margin: 15px; font-family: 'Poppins';" href="/contacto">Contacto</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main class="main-contacto">
+			<center>
+			<form>
+				<label for="nombre_apellido">Nombre y Apellido</label>
+				<input type="text" id="nombre_apellido" class="input-padron" placeholder="" required>
+
+				<label for="email">Email</label>
+				<input type="email" id="email" class="input-padron" placeholder="email@dominio.com" required>
+
+				<label for="telefono">Telefono</label>
+				<input type="tel" id="telefono" class="input-padron" placeholder="(XX) XXXX XXXX" required>
+
+
+				<label for="mensaje">Mensaje</label>
+				<textarea cols="70" rows="10" id="mensaje" class="input-padron"></textarea required>
+				
+
+				<fieldset>
+					<legend>¿Cómo le gustaría que lo contactemos?</legend>
+					<label for="radio-email"><input type="radio" value="email" id="radio-email" name="contacto">Email</label>
+					<label for="radio-telefono"><input type="radio" value="telefono" id="radio-telefono" name="contacto">Telefono</label>
+					<label for="radio-wpp"><input type="radio" value="wpp" id="radio-wpp" name="contacto" checked>WhatsApp</label>
+				</fieldset>
+
+				<fieldset>
+					<legend>¿En cuál horario prefiere ser atendido?</legend>
+					<select>
+						<option>Mañana</option>
+						<option>Tarde</option>
+						<option>Noche</option>
+					</select>
+				</fieldset>
+
+				<label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de la Peluquería Versalles?</label>
+ 
+				<input type="submit" value="Enviar Formulario" class="enviar">
+			</form>
+
+			<table class="tabla-contacto">
+				<thead>				
+					<tr>
+						<th>Dia</th>					
+						<th>Horario</th>					
+					</tr>
+				</thead>
+				<tbody>					
+					<tr>
+						<td>Lunes</td>					
+						<td>08h ~ 20h</td>					
+					</tr>
+					<tr>
+						<td>Miércoles</td>					
+						<td>08h ~ 20h</td>					
+					</tr>
+					<tr>
+						<td>Viernes</td>					
+						<td>08h ~ 20h</td>					
+					</tr>
+				</tbody>
+			</table>
+		</center>
+		</main>
+		<footer>
+			<img src="Images/hair-blanco.png" alt="Logo de la Peluquería Versalles" width="23%">
+			<p class="copyright">&copy Copyright Peluquería Versalles - 2024</p>
+		</footer>
+	</body>
+</html>

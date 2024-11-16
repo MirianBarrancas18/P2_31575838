@@ -1,0 +1,397 @@
+
+body{
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+header{
+	background-color: #ff8080;
+	padding: 5px 0;
+  
+}
+
+.main-contacto{
+	margin-left: 1em;
+}
+
+.caja{
+	width: 960px;
+	position: relative;
+	margin: 0 auto; 
+}
+
+nav{
+	position: absolute;
+	top: 110px;
+	right: 0;
+}
+
+nav li{
+	display: inline;
+	margin: 0 0 0 15px;
+}
+
+nav a{
+	text-transform: uppercase;
+	color: black;
+	font-weight: bold;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+nav a:hover{
+	color: #c78c19;
+	text-decoration: underline;
+}
+
+.productos{
+	width: 940px;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+.productos li{
+	display: inline-block;
+	text-align: center;
+	width: 30%;
+	vertical-align: top;
+	margin: 0 1.5%;
+	padding: 30px 20px;
+	box-sizing: border-box;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+.productos li:hover{
+	border-color: #c78c19;
+}
+
+.productos li:active{
+	border-color: #088c19;
+}
+
+.productos h2{
+	font-size: 26px;
+	font-weight: bold;
+}
+
+.productos li:hover h2{
+	font-size: 29px;
+}
+
+.producto-descripcion{
+	font-size: 18px;
+}
+
+.producto-precio{
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+footer{
+	text-align: center;
+	background: url(../Images/bg.jpg);
+	padding: 40px;
+}
+
+.copyright{
+	color: white;
+	font-size: 16px;
+	margin: 20px;
+}
+
+/*-------- CSS PARA CONTACTO -------- */
+
+form{
+	margin: 40px 0;
+
+}
+
+form label, form legend{
+	display: block;
+	font-size: 20px;
+	margin: 0 0 10px;
+}
+
+.input-padron{
+	display: block;
+	margin: 0 0 20px;
+	padding: 10px 25px;
+	width: 50%;
+}
+
+.checkbox{
+	margin: 20px 0;
+}
+
+.enviar{
+	width: 40%;
+	padding: 15px 0;
+	font-size: 18px;
+	font-weight: bold;
+	color: white;
+	background: orange;
+	border: none;
+	border-radius: 5px;
+	transition: 1s all;
+	cursor: pointer;
+}
+
+.enviar:hover{
+	background: darkorange;
+	transform: scale(1.2);
+}
+
+.tabla-contacto{
+	margin: 40px 7%;
+	position: relative;
+}
+
+thead{
+	background: #555555;
+	color: white;
+	font-weight: bold;
+}
+td, th{
+	border: 1px solid black;
+	padding: 8px 15px;
+	font-size: 18px;
+}
+
+/*------------ CSS PARA HOME ------------*/
+.banner{
+	width: 100%;
+}
+
+.principal{
+	padding: 3em 0;
+	background: #FEFEFE;
+	width: 940px;
+	margin: 0 auto;
+}
+
+.titulo-principal{
+	text-align: center;
+	font-size: 2em;
+	margin: 0 0 1em;
+	clear: left;	
+}
+
+.principal p{
+	margin: 0 0 1em;
+}
+
+.principal strong{
+	font-weight: bold;
+}
+
+.principal em{
+	font-style: italic;
+}
+
+.utensilios{
+	width: 120px;
+	float: left;
+	margin: 0 20px 20px 0;
+}
+
+.mapa{
+	padding: 3em 0;
+	background: linear-gradient(#FEFEFE, #888888);
+}
+
+.mapa p{
+	margin: 0 0 2em;
+	text-align: center;
+}
+
+.mapa-contenido{
+	width: 940px;
+	margin: 0 auto;
+}
+
+
+.diferenciales{
+	padding: 3em 0;
+	background: #888888;
+}
+
+.contenido-diferenciales{
+	width: 640px;
+	margin: 2.5em auto 0;
+}
+
+/*La imagen tiene el 60%, la lista ocupara el 40% de los 640px definididos para todo el bloque contenido-diferenciales*/
+
+.lista-diferenciales{
+	width: 40%;
+	display: inline-block; /*inline-block hace una lectura del codigo HTML, si lo coloco todo seguido sin saltos del linea, dara el efecto deseado*/
+	vertical-align: top;
+}
+
+.items{
+	line-height: 1.5;
+}
+
+.items:first-child{
+	font-weight: bold;
+}
+.items:before{
+	content:"★";
+}
+
+.imagen-diferenciales{
+	width: 60%;
+	transition: 400ms;
+	box-shadow: 10px 10px 30px 10px black;
+}
+
+.imagen-diferenciales:hover{
+	opacity: 0.3;
+}
+
+.video{
+	width: 640px;
+	margin: 1.2em auto;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 80%;
+	font-family: 'Poppins', sans-serif;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-padron, textarea, select {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.input-padron:focus, 
+textarea:focus, 
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Radio Buttons */
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+fieldset legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+label[for^="radio"] {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+/* Checkbox */
+.checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.checkbox input {
+    margin-right: 8px;
+}
+
+/* Submit Button */
+.enviar {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.enviar:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px 20px;
+    }
+}
+
+
+/* ---------- CSS RESPONSIVE --------- */
+
+@media screen and (max-width: 480px){
+
+	h1, nav ul{
+		text-align: center;
+	}
+	nav{
+		position: static;
+	}
+	nav ul{
+		display: auto;	
+	}
+	nav li{
+		display: block;
+		margin: 0 0;
+	}
+
+	.caja, .principal, .mapa-contenido, .contenido-diferenciales, .video, .productos, .productos li, .enviar{
+		width: auto;
+		margin: 0 auto;
+	}
+
+	.tabla-contacto{
+		margin: 10% 0;
+	}
+
+	.mapa{
+		padding: 0;
+	}
+
+	.lista-diferenciales, .imagen-diferenciales{
+		width: 100%;
+	}
+
+	.imagen-diferenciales{
+		margin: 15px 0 0 0;
+	}
+	.titulo-principal{
+		text-decoration: underline 0.5px;
+	}
+}
+
