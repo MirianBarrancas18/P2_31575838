@@ -7,7 +7,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var contactoRouter = require('./routes/contacto');
-var productosRouter = require('./routes/productos'); 
+var productosRouter = require('./routes/productos');
+const bodyParser = require('body-parser');
+const ContactosController = require('./controllers/contactosController');
+
 
 var app = express();
 
@@ -25,6 +28,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contacto', contactoRouter); 
 app.use('/productos', productosRouter); 
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/subirDatos', (req, res) => ContactosController.add(req, res));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

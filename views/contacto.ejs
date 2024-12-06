@@ -22,43 +22,24 @@
 				</nav>
 			</div>
 		</header>
+		<center>
 
 		<main class="main-contacto">
-			<center>
-			<form>
-				<label for="nombre_apellido">Nombre y Apellido</label>
-				<input type="text" id="nombre_apellido" class="input-padron" placeholder="" required>
+			<form id="formulario">
+				<div class="centrar" id="modalDeContacto">
+
+				<label for="nombre">Nombre</label>
+				<input type="text" id="nombre" name="nombre" class="input-padron" placeholder="" required>
 
 				<label for="email">Email</label>
-				<input type="email" id="email" class="input-padron" placeholder="email@dominio.com" required>
+				<input type="email" id="email" name="email" class="input-padron" placeholder="email@dominio.com" required>
 
-				<label for="telefono">Telefono</label>
-				<input type="tel" id="telefono" class="input-padron" placeholder="(XX) XXXX XXXX" required>
-
-
-				<label for="mensaje">Mensaje</label>
-				<textarea cols="70" rows="10" id="mensaje" class="input-padron"></textarea required>
+				<label for="comentario">Comentario</label>
+				<textarea cols="70" rows="10" id="comentario" name="comentario" class="input-padron"></textarea required>
 				
+				<input type="submit" value="Enviar" class="enviar">
+			</div>
 
-				<fieldset>
-					<legend>¿Cómo le gustaría que lo contactemos?</legend>
-					<label for="radio-email"><input type="radio" value="email" id="radio-email" name="contacto">Email</label>
-					<label for="radio-telefono"><input type="radio" value="telefono" id="radio-telefono" name="contacto">Telefono</label>
-					<label for="radio-wpp"><input type="radio" value="wpp" id="radio-wpp" name="contacto" checked>WhatsApp</label>
-				</fieldset>
-
-				<fieldset>
-					<legend>¿En cuál horario prefiere ser atendido?</legend>
-					<select>
-						<option>Mañana</option>
-						<option>Tarde</option>
-						<option>Noche</option>
-					</select>
-				</fieldset>
-
-				<label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de la Peluquería Versalles?</label>
- 
-				<input type="submit" value="Enviar Formulario" class="enviar">
 			</form>
 
 			<table class="tabla-contacto">
@@ -83,11 +64,44 @@
 					</tr>
 				</tbody>
 			</table>
-		</center>
 		</main>
+	</center>
+
 		<footer>
 			<img src="../images/hair-blanco.png" alt="Logo de la Peluquería Versalles" width="23%">
 			<p class="copyright">&copy Copyright Peluquería Versalles - 2024</p>
 		</footer>
 	</body>
+
+	<script>
+		document.getElementById('formulario').addEventListener('submit', async function(event) {
+			event.preventDefault();
+		
+			const formData = new FormData(this);
+			const data = Object.fromEntries(formData.entries());
+			const modalDeContacto = document.getElementById('modalDeContacto');
+
+			// Actualizar el contenido del modal
+			modalDeContacto.innerHTML = `<p>¡Datos enviados!</p>`;
+		
+			try {
+				const response = await fetch('/subirDatos', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(data)
+				});
+		
+
+
+			} catch (error) {
+				// Mostrar error de conexión
+				const modalDeContacto = document.getElementById('modalDeContacto');
+				modalDeContacto.innerHTML = `<p>Error de conexión.</p>`;
+				console.error('Error:', error);
+			}
+		});
+		</script>
+		
 </html>
