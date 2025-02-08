@@ -25,7 +25,6 @@ app.use(
     saveUninitialized: false,
     cookie: {
       httpOnly: true, // No accesible por JavaScript
-      sameSite: "strict", // Prevenir CSRF
       maxAge: 15 * 60 * 1000, // 15 minutos
     },
   })
