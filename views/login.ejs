@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - Peluquería Versalles</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="caja">
+      <h1><img src="../images/hair.png" width="18%"></h1>
+      <nav>
+        <ul>
+          <li><a style="margin: 15px; font-family: 'Poppins';" href="/">Home</a></li>
+          <li><a style="margin: 15px; font-family: 'Poppins';" href="/productos">Productos</a></li>
+          <li><a style="margin: 15px; font-family: 'Poppins';" href="/contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="login-container" style="text-align: center; font-family: 'Poppins';">
+      <h1>Iniciar Sesión</h1>
+      <center>
+      <form action="/auth/login" method="POST" style="margin-bottom: 20px;">
+        <label for="username" style="display: block; margin-bottom: 10px;">Usuario</label>
+        <input type="text" id="username" name="username" required style="padding: 10px; margin-bottom: 15px; width: 80%; max-width: 300px;">
+
+        <label for="password" style="display: block; margin-bottom: 10px;">Contraseña</label>
+        <input type="password" id="password" name="password" required style="padding: 10px; margin-bottom: 20px; width: 80%; max-width: 300px;">
+
+        <button type="submit" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; cursor: pointer; border-radius: 5px;">
+          Iniciar Sesión
+        </button>
+      </form>
+    </center>
+
+      <div>
+        <p>O inicia sesión con:</p>
+        <a href="/auth/google" style="margin-bottom: 20px; display: inline-block; padding: 10px 20px; background-color: #DB4437; color: white; text-decoration: none; border-radius: 5px;">
+          Iniciar con Google
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

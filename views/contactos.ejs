@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		  <!-- Open Graph -->
+          <meta property="og:title" content="<%= ogTitle %>" />
+          <meta property="og:description" content="<%= ogDescription %>" />
+          <meta property="og:url" content="<%= request.protocol + '://' + request.get('host') + req.originalUrl %>" />
+    <title>Contactos</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <center>
+    <header>
+      <h1>Lista de Contactos</h1>
+      <input type="text" id="search" placeholder="Buscar por nombre o email">
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Comentario</th>
+            <th>IP</th>
+            <th>Fecha y Hora</th>
+          </tr>
+        </thead>
+        <tbody id="contactos-table">
+          <% contactos.forEach(contacto => { %>
+            <tr>
+              <td><%= contacto.nombre %></td>
+              <td><%= contacto.email %></td>
+              <td><%= contacto.comentario %></td>
+              <td><%= contacto.ip %></td>
+              <td><%= contacto.fecha_hora %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </main>
+</center>
+    <script>
+      const searchInput = document.getElementById("search");
+      const tableRows = document.querySelectorAll("#contactos-table tr");
+
+      searchInput.addEventListener("input", () => {
+        const filter = searchInput.value.toLowerCase();
+        tableRows.forEach(row => {
+          const name = row.cells[0].textContent.toLowerCase();
+          const email = row.cells[1].textContent.toLowerCase();
+          row.style.display = name.includes(filter) || email.includes(filter) ? "" : "none";
+        });
+      });
+    </script>
+  </body>
+</html>
