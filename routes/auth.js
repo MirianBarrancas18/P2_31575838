@@ -124,7 +124,7 @@ router.post("/login", (req, res, next) => {
 // Ruta para cerrar sesión
 router.get("/logout", (req, res) => {
   req.session.destroy(() => {
-    res.redirect("/login");
+    res.redirect("/");
   });
 });
 
@@ -154,5 +154,41 @@ router.get("/contactos", ensureAuthenticated, (req, res, next) => {
 router.get("/login", (req, res) => {
   res.render("login"); // Asegúrate de que "login.ejs" exista en tu carpeta de vistas
 });
+
+// Ruta para mostrar el formulario de registro
+router.get("/registro", (req, res) => {
+  res.render("registro"); // Asegúrate de tener un archivo `registro.ejs` en tu carpeta de vistas
+});
+
+// Ruta para manejar el registro de nuevos usuarios
+router.post("/registro", (req, res, next) => {
+  const { username, password } = req.body;
+
+  // Verificar si el usuario ya existe
+  db.get("SELECT * FROM users WHERE username = ?", [username], (err, user) => {
+    if (err) return next(err);
+    if (user) {
+      return res.status(400).send("El usuario ya existe. Prueba con otro nombre.");
+    }
+
+    // Hash de la contraseña
+    bcrypt.hash(password, 10, (err, hash) => {
+      if (err) return next(err);
+
+      // Insertar el nuevo usuario en la base de datos
+      db.run(
+        "INSERT INTO users (username, password_hash) VALUES (?, ?)",
+        [username, hash],
+        (err) => {
+          if (err) return next(err);
+
+          // Registro exitoso, redirigir al login
+          res.redirect("/");
+        }
+      );
+    });
+  });
+});
+
 
 module.exports = router;

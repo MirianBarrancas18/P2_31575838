@@ -7,15 +7,38 @@
           <meta property="og:title" content="<%= ogTitle %>" />
           <meta property="og:description" content="<%= ogDescription %>" />
     <title>Contactos</title>
+    <link rel="icon" type="image/x-icon" href="../images/hair-blanco.png">
+
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
     <center>
     <header>
       <h1>Lista de Contactos</h1>
-      <input type="text" id="search" placeholder="Buscar por nombre o email">
-    </header>
+      <input
+      type="text"
+      id="search"
+      placeholder="Buscar por nombre o email"
+      style="padding: 10px 15px; width: 300px; border: 1px solid #ccc; border-radius: 25px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); font-size: 14px; outline: none; transition: box-shadow 0.3s ease;"
+      onfocus="this.style.boxShadow='0px 4px 8px rgba(0, 0, 0, 0.2)'"
+      onblur="this.style.boxShadow='0px 2px 5px rgba(0, 0, 0, 0.1)'"
+    />
+        </header>
     <main>
+      <div class="logout-container" style="text-align: right;">
+        <form action="/auth/logout" method="GET" style="display: inline;">
+          <button type="submit" style="
+            padding: 10px 20px; 
+            background-color: #230a63; 
+            color: whitesmoke;
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+          ">
+            Cerrar Sesión
+          </button>
+        </form>
+        </div>
       <table>
         <thead>
           <tr>
